@@ -6,9 +6,6 @@ namespace Managers
     {
         private void Start()
         {
-            var gameObj = GameObject.Find("@Managers");
-            var manager = gameObj.GetComponent<Managers>();
-            Debug.Log(manager.transform.position);
         }
     }
 }

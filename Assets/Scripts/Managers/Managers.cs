@@ -4,13 +4,20 @@ namespace Managers
 {
     public class Managers : MonoBehaviour
     {
-        private void Start()
-        {
-            Debug.Log("Manager script started");
-        }
+        private static Managers _instance;
+        public static Managers Instance => _instance;
 
-        private void Update()
+        private void Awake()
         {
+            if (_instance == null)
+            {
+                _instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
