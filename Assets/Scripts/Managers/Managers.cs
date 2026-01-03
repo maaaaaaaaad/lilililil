@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Managers
 {
-    public class Manager : MonoBehaviour
+    public class Managers : MonoBehaviour
     {
         private void Start()
         {
