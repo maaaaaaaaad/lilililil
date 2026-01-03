@@ -5,7 +5,23 @@ namespace Managers
     public class Managers : MonoBehaviour
     {
         private static Managers _instance;
-        public static Managers Instance => _instance;
+
+        public static Managers Instance
+        {
+            get
+            {
+                if (_instance != null)
+                    return _instance;
+
+                _instance = FindAnyObjectByType<Managers>();
+                if (_instance != null)
+                    return _instance;
+
+                var go = new GameObject("@Managers");
+                _instance = go.AddComponent<Managers>();
+                return _instance;
+            }
+        }
 
         private void Awake()
         {
@@ -14,7 +30,7 @@ namespace Managers
                 _instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            else
+            else if (_instance != this)
             {
                 Destroy(gameObject);
             }

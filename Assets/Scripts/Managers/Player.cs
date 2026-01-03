@@ -6,6 +6,8 @@ namespace Managers
     {
         private void Start()
         {
+            var managers = Managers.Instance;
+            Debug.Log(managers.gameObject.transform.position);
         }
     }
 }
