@@ -270,8 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   target: {fileID: 2083879825}
-  offset: {x: 0, y: 10, z: -7}
-  cameraPitch: 45
+  offset: {x: 0, y: 5, z: -7}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
