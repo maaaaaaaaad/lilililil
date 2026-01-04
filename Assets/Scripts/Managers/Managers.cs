@@ -17,7 +17,7 @@ namespace Managers
                 if (_instance != null)
                     return _instance;
 
-                var gameObj = new GameObject("@Managers");
+                var gameObj = new GameObject { name = "@Managers" };
                 _instance = gameObj.AddComponent<Managers>();
                 return _instance;
             }
