@@ -50,23 +50,12 @@ public class PlayerController : MonoBehaviour
 
     private static Vector3 CalculateMoveDirection(float horizontal, float vertical)
     {
-        if (Camera.main == null)
-            return Vector3.zero;
-
-        var cameraForward = Camera.main.transform.forward;
-        cameraForward.y = 0;
-        cameraForward.Normalize();
-
-        var cameraRight = Camera.main.transform.right;
-        cameraRight.y = 0;
-        cameraRight.Normalize();
-
-        return (cameraRight * horizontal + cameraForward * vertical).normalized;
+        return new Vector3(horizontal, 0f, vertical).normalized;
     }
 
     private void Move(Vector3 direction)
     {
-        transform.position += direction * TotalMoveSpeed * Time.deltaTime;
+        transform.position += direction * (TotalMoveSpeed * Time.deltaTime);
         RotateTowards(direction);
     }
 
